@@ -1,0 +1,179 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Семпл для заметки о пустых заголовках виджетов WordPress.</title>
+	<link rel='stylesheet' type='text/css' href="clear.css" />
+	<style>
+
+		.example-outer-div {
+			overflow: hidden;
+			width: 550px;
+			margin: 20px auto;
+		}
+
+		.example-outer-div .caption {
+			text-align: center;
+			font-weight: 600;
+			font-size: 20px;
+		}
+
+		.example-page-wrap {
+			font: 12px/16px Trebuchet MS;
+		}
+
+		.example-page-wrap .outer-div {
+			width: 250px;
+			border: 1px solid #008;
+			background: #ccf;
+			margin: 20px 0;
+		}
+
+		.example-page-wrap .title {
+			font-size: 18px;
+			padding: 5px;
+		}
+		.example-page-wrap .footer,
+		.example-page-wrap .title {
+			background: #99f;
+		}
+
+		.example-page-wrap .body {
+			padding: 16px 10px;
+			border: 1px solid #66c;
+			margin: 2px;
+		}
+
+		.example-page-wrap.use-last-child {
+			float: left;
+		}
+
+		.example-page-wrap.use-not-empty {
+			float: right;
+		}
+
+		.example-page-wrap.use-not-empty .title,
+		.example-page-wrap.use-not-empty .footer {
+			background: #c66;
+		}
+
+		.example-page-wrap.use-not-empty .outer-div {
+			background: #ecc;
+			border-color: #800;
+		}
+		.example-page-wrap.use-not-empty .body {
+			border-color: #b55;
+		}
+
+		.example-page-wrap .blank-block {
+			min-height: 0;
+			height: auto;
+			margin: 0;
+			padding: 0;
+			border-color: #66c;
+		}
+
+		.example-page-wrap.use-not-empty .blank-block {
+			border-color: #b55;
+		}
+
+		.example-page-wrap.use-not-empty .blank-block:not(:empty) {
+			height: auto;
+			padding: 10px 10px;
+			border-style: solid;
+			border-width: 1px;
+			margin: 2px;
+		}
+
+		.example-page-wrap.use-last-child .blank-block:last-child {
+			height: auto;
+			padding: 10px 10px;
+			border-style: solid;
+			border-width: 1px;
+			margin: 2px;
+		}
+
+		.example-page-wrap .footer {
+			text-align: center;
+			padding: 3px 0;
+		}
+
+	</style>
+	</head>
+	<body>
+
+		<div class="example-outer-div">
+			<div class="example-page-wrap use-last-child">
+				<p class="caption">:last-child</p>
+
+				<div class="outer-div">
+					<div class="blank-block"></div>
+					<div class="title">Заголовок</div>
+					<div class="body">Тело виджета находится здесь.<br />Пустой блок не заметен.</div>
+				</div>
+
+				<div class="outer-div">
+					<div class="blank-block"> виджет без заголовка и тела обладает отступами и рамкой.</div>
+				</div>
+
+				<div class="outer-div">
+					<div class="blank-block">
+					</div>
+					<div class="title">Пустой блок с пробелом</div>
+					<div class="body">Здесь блок оказывается нечувствителен к своему содержимому.</div>
+				</div>
+
+				<div style="height: 6px;"></div>
+
+				<div class="outer-div">
+					<div class="blank-block"> виджет без заголовка и тела с футером &mdash; отступы и рамка отсутствуют.</div>
+					<div class="footer">футер</div>
+				</div>
+
+				<div style="height: 6px;"></div>
+
+				<div class="outer-div">
+					<div class="blank-block"></div>
+					<div class="title">Виджет с футером</div>
+					<div class="body">Контент виджета находится тут.</div>
+					<div class="footer">футер</div>
+				</div>
+
+			</div>
+
+			<div class="example-page-wrap use-not-empty">
+				<p class="caption">:not(:empty)</p>
+
+				<div class="outer-div">
+					<div class="blank-block"></div>
+					<div class="title">Заголовок</div>
+					<div class="body">Тело виджета находится тут.<br />Пустой блок не заметен.</div>
+				</div>
+
+				<div class="outer-div">
+					<div class="blank-block"> виджет без заголовка и тела обладает отступами и рамкой.</div>
+				</div>
+
+				<div class="outer-div">
+					<div class="blank-block">
+					</div>
+					<div class="title">Пустой блок с пробелом</div>
+					<div class="body">В этом случае блок имеет ненулевые вертикальные отступы и портит виджет.</div>
+				</div>
+
+				<div class="outer-div">
+					<div class="blank-block"> виджет без заголовка и тела с футером - нормальные отступы.</div>
+					<div class="footer">футер</div>
+				</div>
+
+				<div class="outer-div">
+					<div class="blank-block"></div>
+					<div class="title">Виджет с футером</div>
+					<div class="body">Контент виджета находится здесь.</div>
+					<div class="footer">футер</div>
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+</html>
